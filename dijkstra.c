@@ -124,6 +124,11 @@ char		*ft_dijkstra_setting(t_data data)
 	find = 1;
 	while (find)
 	{
+		if (data.lnode->node_link == 0)
+		{
+			ft_putstr_fd("ERROR\n",2);
+			exit(0);
+		}
 		find = ft_expend(data.lnode, min);
 		if (find == 0)
 			break ;
